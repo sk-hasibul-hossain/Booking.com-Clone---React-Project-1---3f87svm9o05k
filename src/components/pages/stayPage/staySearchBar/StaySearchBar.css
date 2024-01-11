@@ -1,0 +1,222 @@
+.stay-search-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: -30px;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffb700;
+    width: 85%;
+    justify-content: stretch;
+    border-radius: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.place-search-area{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin: 4px;
+    border-radius: 0.5rem;
+    >span{
+        margin: 1rem;
+    }
+    >input{
+        background-color: #f5f5f5;
+        border: none;
+        width: 100%;
+        height: 2.75rem;
+        outline: none;
+    }
+}
+
+.stay-search-calander{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.calender-search-area{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin: 4px 4px 4px 0px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    >span{
+        margin: 1rem;
+    }
+}
+
+.number-of-people-search-area{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin: 4px 0px 4px 0px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    >span{
+        margin: 1rem;
+    }
+}
+
+.stay-calander-list{
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    display: flex;
+    flex-direction: row;
+    right: 34rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.clanader-header{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 2px solid #003b95;
+    color: #003b95;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+    >span{
+        display: none;
+        position: absolute;
+        right: 8px;
+        color: rgb(44, 44, 44);
+        cursor: pointer;
+    }
+}
+
+/* .custom-calander-style{
+    position: absolute;
+    top: 240px
+} */
+
+.search-state-wise-container{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003b95;
+    color: #f5f5f5;
+    margin: 4px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.stay-option-container{
+    position: absolute;
+    top: 60px;
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(37, 37, 37);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 1;
+    >span{
+        display: none;
+        position: absolute;
+        right:8px;
+        top: 4px;
+        padding: 3px;
+        cursor: pointer;
+    }
+}
+
+.inner-stay-option-container{
+    /* border: 1px solid red; */
+    margin: 24px;
+}
+
+.options{
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px;
+}
+
+.inner-option{
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    padding: 10px;
+}
+
+.option-submit-btn{
+    width: 100%;
+    height: 2.5rem;
+    color: #003b95;
+    border: 1px solid #003b95;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.btn-color{
+    color: #003b95
+}
+
+@media screen and (max-width: 992px){
+    .search-container{
+        display: flex;
+        flex-direction: column;
+        width: 90%; 
+    }
+
+    .stay-search-area{
+        top: 0;
+    }
+
+    .stay-calander-list{
+        flex-direction: column;
+        width: 84%;
+        left: 2rem;
+    }
+
+    .clanader-header > span{
+        display: block;
+    }
+    
+    .calender-search-area{
+        margin-left: 4px;
+    }
+
+    .stay-search-calander{
+        font-size: 0.9rem;
+        font-weight: 900;
+    }
+
+    .number-of-people-search-area{
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+
+    .search-state-wise-container{
+        height: 2.7rem;
+    }
+
+    .stay-option-container > span{
+        display: block;
+    }
+}

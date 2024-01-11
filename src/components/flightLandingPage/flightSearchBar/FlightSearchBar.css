@@ -1,0 +1,287 @@
+.flight-search-area{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+}
+
+/* .flight-search-container{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffb700;
+    width: 85%;
+    justify-content: stretch;
+    border-radius: 0.5rem;
+    flex-wrap: wrap;
+} */
+
+.flight-search-area-section-one{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.flight-search-area-section-two{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.flight-search-container{
+    background-color: #ffb700;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 83%;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 0.5rem;
+    >div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        padding: 4px;
+        height: 2rem;
+        
+    }
+}
+
+.flight-search-ariport-from-container{
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.flight-search-ariport-from-container-section-one{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding-left: 8px;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    >span{
+        transform: rotateZ(-45deg);
+    }
+}
+
+.flight-search-ariport-from-container-section-two{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    right: 0px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    z-index: 1;
+    cursor:default;
+}
+
+.inner-flight-search-ariport-from-container-section-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    margin: 16px;
+    >input{
+        height: 2rem;
+        width: 97%;
+        padding-left: 4px;
+    }
+}
+
+.flight-airport-search-result{
+    >ul{
+        list-style: none;
+        >li{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+            width: 98%;
+            margin-top: 10px;
+            padding: 8px 4px;
+            cursor: pointer;
+            background-color: rgb(215, 228, 247);
+            >span{
+                transform: rotateZ(-45deg);
+                color: #6c808f;
+            }
+            >p{
+                font-size: 0.8rem;
+                color: #444444;
+            }
+            &:hover{
+                background-color: rgb(186, 197, 214);
+            }
+        }
+    }
+}
+
+.cap-box{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transform: rotateZ(45deg);
+    background-color: #fff;
+    top: 45px;
+    left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.flight-search-ariport-inter-change-container{ 
+    width: 10%;
+    position: relative;
+    cursor: pointer;
+}
+.flight-inter-change-rotaed-box{
+    position: relative;
+    width: 100%;
+    color: #003b95;
+}
+
+.flight-inter-change-right-to-left{
+    animation: right_to_left 200ms linear forwards;
+}
+
+.flight-inter-change-left-to-right{
+    animation: left_to_right 200ms linear forwards;
+}
+
+@keyframes right_to_left {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+}
+
+@keyframes left_to_right {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+}
+
+.flight-right-arrow{
+    position: absolute;
+    top: -1px;
+    left: 10px;
+}
+
+.flight-left-arrow{
+    position: absolute;
+    bottom: -1px;
+    left: 11px;
+}
+
+.flight-search-ariport-to-container{
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.flight-search-ariport-date-container{
+    width: 100%;
+}
+
+.flight-search-btn-container{
+    height: 2em;
+    width: 25%;
+}
+
+.flight-search-calander-style{
+    border: none;
+    margin: 8px;
+}
+
+.custom-flight-calander-style-container{
+    top: 39px;
+}
+
+.calander-cap-box{
+    top: 34px;
+}
+
+.flight-search-btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #fff;
+    background-color: #003b95;
+    border-radius: 8px;
+    height: 2.5rem;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.flight-number-of-customer{
+    display: flex;
+    gap: 4px;
+    position: relative;
+    background-color: #fff;
+    padding: 2px 4px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.flight-customer-arrow-style{
+    transform: rotateZ(90deg);
+    font-size: 0.8rem;
+}
+
+.flight-customer-section-container{
+    position: absolute;
+    top: 25px;
+    width: 250px;
+    height: 100px;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    cursor: default;
+}
+
+.flight-adult-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.flight-adult-container-section-one{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    >span{
+        font-size: 0.8rem;
+        color: #797979;
+    }
+}
+
+.flight-adult-container-section-two{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #353535;
+    padding: 4px;
+    border-radius: 4px;
+    >span{
+        padding: 4px;
+        cursor: pointer;
+    }
+}

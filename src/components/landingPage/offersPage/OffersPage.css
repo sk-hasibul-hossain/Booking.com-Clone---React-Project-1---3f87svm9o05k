@@ -1,0 +1,37 @@
+.offers-page-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.offers-page-header{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    >h1{
+        font-size: 1.75rem;
+        color: rgb(27, 27, 27);
+    }
+    >h2{
+        color: #474747;
+        font-size: 0.9rem;
+        font-weight: 100;
+        width: 95%;
+    }
+}
+
+.offer-page{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 992px){
+    .offer-page{
+        flex-direction: column;
+    }
+}

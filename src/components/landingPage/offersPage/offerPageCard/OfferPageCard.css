@@ -1,0 +1,78 @@
+.offer-page-card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 500px;
+    height: 100px;
+    padding: 24px 8px 24px 8px;
+}
+
+.offer-card-body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.offer-card-title{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    >p{
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: rgb(27,27,27);
+    }
+    >span{
+        font-size: 0.825rem;
+        color: rgb(49, 49, 49);
+    }
+}
+
+.offer-flight-btn{
+    width: 130px;
+    height: 30px;
+    background-color: #006ce4;
+    color: white;
+    border: none;
+}
+.offer-card-image{
+    position: relative;
+    width: 150px;
+    height: 100%;
+    overflow-y:hidden;
+    overflow-x: hidden;
+    >img{
+        position: absolute;
+        top: -40px;
+        right: 0px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .offer-page-card-container{
+        width:95%;
+        height: 130px;
+    }
+
+    .offer-card-title > p{
+        font-weight: 900;
+    }
+
+    .offer-card-image{
+        width: 100px;
+        >img{
+            top: 0;
+        }
+    }
+
+    .offer-flight-btn{
+        width: 130px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid#006ce4;
+        color: #006ce4;
+    }
+}

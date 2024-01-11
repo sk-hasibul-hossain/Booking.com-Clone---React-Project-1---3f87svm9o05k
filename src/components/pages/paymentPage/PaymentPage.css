@@ -1,0 +1,115 @@
+.paymentPage-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    height: 100vh;
+}
+
+.inner-paymentPage-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 85%;
+    >p{
+        font-size: 0.825rem;
+        line-height: 1.225rem;
+        margin-top: 32px;
+        >span{
+            color: rgb(0, 172, 172);
+            
+        }
+    }
+}
+
+.inner-paymentPage-container-wraper{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 16px;
+    gap: 8px;
+
+    >h2{
+        margin-top: 24px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 50%;
+        margin-top: 16px;
+        font-weight: 600;
+    }
+}
+
+.payment-cards{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 16px;
+    >img{
+        width: 60px;
+        height: 30px;
+        object-fit:fill;
+    }
+}
+
+.payemt-card-holder-input-wraper{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    >input{
+        height: 2rem;
+        border: 1px solid #8b8b8b;;
+        outline: none;
+    }
+}
+
+.inner-payemt-card-holder-input-wraper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #8b8b8b;
+    width: 100%;
+    height: 2rem;
+    >input{
+        height: 2rem;
+        border: none;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        font-size: 1.3rem;
+    }
+    >span{
+        font-size: 1.5rem;
+        margin: 0px 4px;
+    }
+}
+
+.payment-card-date-validation-input-wraper{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.payment-detail-input-field-remove-arrow{
+    >input[type=number] {
+        -moz-appearance: textfield;
+    }
+    >input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+}
+
+.payment-submit-btn{
+    width: 100px;
+    height: 2rem;
+    border: none;
+    background-color:#0071c2;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    bottom: 16px;
+}

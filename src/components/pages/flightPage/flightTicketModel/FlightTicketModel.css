@@ -1,0 +1,238 @@
+.flight-tickit-modal-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(24, 33, 110, 0.2);
+}
+
+.inner-flight-tickit-modal-container{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 56%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    gap: 24px;
+}
+
+.flight-ticket-header-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    >h2{
+        font-size: 1.25rem;
+    }
+    >span{
+        font-size: 1.25rem;
+        padding: 2px 4px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(0,0,0,0.2);
+            color: rgb(36, 20, 20);
+        }
+    }
+}
+
+.flight-ticket-destination-title-section{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    >h2{
+        font-size: 1rem;
+    }
+    >p{
+        font-size: 0.8rem;
+        color: #636363;
+    }
+}
+
+.flight-ticket-details-body-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.inner-flight-ticket-details-body-section{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.inner-flight-ticket-division{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.inner-flight-tick-details-body-section-division-one{
+    border: 1px solid #636363;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.inner-flight-tick-details-body-section-division-two{
+    border-right: 1px solid #636363;
+    width: 1px;
+    height: 20px;
+}
+
+.inner-flight-tick-details-body-section-division-three{
+    border: 1px solid #636363;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.inner-flight-ticket-division-two{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    >section{
+        >p{
+            font-size: 0.87rem;
+            color: #636363;;
+        }
+        >h2{
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.inner-flight-ticket-details-body-section-two{
+    width: 40%;
+    >p{
+        color: #636363;
+        font-size: 0.87rem;
+    }
+}
+
+.inner-flight-bagage-section{
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    border-top:1px solid #636363;
+    padding: 8px;
+}
+
+.inner-flight-bagage-section-one{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 30%;
+    padding: 8px;
+    >h2{
+        font-size: 1rem;
+    }
+    >p{
+        font-size: 0.9rem;
+        color: #636363;
+    }
+}
+
+.inner-flight-bagage-section-two{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #636363;
+    width: 80%;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px;
+    >section{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        >svg{
+            width: 20px;
+            height: 20px;
+        }
+        >section{
+            display: flex;
+            flex-direction: column;
+            >label{
+                color: #636363;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+.flight-ticket-offer-section{
+    display: flex;
+    flex-direction: column;  
+    gap: 8px; 
+    border: 1px solid #636363;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.flight-ticket-offer-section-title{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    >svg{
+        width: 40px;
+        height: auto;
+    }
+    >label{
+        font-size: 0.7rem;
+        color: #636363;
+    }
+}
+
+.flight-ticket-offer-section-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    >section{
+        width: 65%;
+
+        >h2{
+            font-size: 1rem;
+        }
+        >label{
+            color: #636363;
+            font-size: 0.87rem;
+        }
+    }
+}
+
+.flight-ticket-offer-section-image{
+    width: 50px;
+}
+
+.flight-ticket-price-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    >section{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        >h2{
+            font-size: 1rem;
+        }
+        >label{
+            font-size: 0.7rem;
+            color: #636363;
+        }
+    }
+    >button{
+        color: #fff;
+        background-color: #003b95;
+        border: none;
+        padding: 0 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}

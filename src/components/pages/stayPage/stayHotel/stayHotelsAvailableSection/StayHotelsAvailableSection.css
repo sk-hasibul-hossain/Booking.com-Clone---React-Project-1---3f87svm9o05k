@@ -1,0 +1,101 @@
+.stay-hotel-available-section-custom-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 94.8%;
+    padding: 8px;
+    background-color: #febb02;
+}
+
+.stay-hotel-available-destination-input-box-container{
+    >label{
+        font-size: 0.8rem;
+    }
+}
+
+.stay-hotel-available-destination-input-box{
+    display: flex;
+    >span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 4px;
+        background-color: #fff;
+        height: 2rem;
+    }
+    >input{
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+}
+
+.stay-hotel-check-in-date-input-box-container{
+    position: relative;
+    >label{
+        font-size: 0.8rem;
+    }
+}
+
+.stay-hotel-check-in-date-input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 2rem;
+    background-color: #fff;
+    cursor: pointer;
+    >p{
+        font-size: 0.9rem;
+    }
+}
+
+.stay-hotel-check-out-date-input-box-container{
+    position: relative;
+    >label{
+        font-size: 0.8rem;
+    }
+}
+
+.stay-hotel-check-out-date-input-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 2rem;
+    background-color: #fff;
+    cursor: pointer;
+    >p{
+        font-size: 0.9rem;
+    }
+}
+
+.hotel-available-search-btn{
+    width: 100%;
+    height: 2.5rem;
+    color: #fff;
+    background-color: #0071c2;
+    border: none;
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+.stay-room-page-custom-search-container{
+    position: absolute;
+    background-color: #fff;
+    padding: 16px;
+    top: 10px;
+    right: -24px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.stay-hotel-room-calaner-custom-style{
+    z-index: 1;
+    position: absolute;
+    top: 53px;
+}
+
+.stay-hotel-room-check-in-calaner-custom{
+    width: 99%;
+}

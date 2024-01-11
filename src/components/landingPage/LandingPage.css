@@ -1,0 +1,21 @@
+/*.search-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 0x;
+    /* padding: 4px; 
+}*/
+
+/* .search-area{
+    position: absolute;
+} */
+
+@media screen and (max-width: 992px){
+    .search-area{
+        margin-left: 0;
+        top: 115px;
+    }
+}

@@ -1,0 +1,328 @@
+.stay-hotel-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hotel-page-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #003b95;
+    width: 100%;
+}
+
+.stay-hotel-image-mobile-view{
+    display: none;
+}
+
+.stay-hotel-available-section{
+    width: 25%;
+}
+
+.stay-hotel-section-one{
+    position: relative;
+    margin-top: 16px;
+    /* border: 1px solid green; */
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+    width: 85%;
+}
+
+.stay-hotel-search-section-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 2.5rem;
+    gap: 8px;
+    background-color: #e4f4ff;
+    color: #0071c2;
+}
+
+.stay-hotel-image-section{
+    width: 80%;
+    /* border: 1px solid red; */
+}
+
+.stay-hotel-navigation-section{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.stay-hotel-navigation-section ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 16px;
+    >li{
+        padding: 8px;
+        cursor: pointer;
+        >a{
+            text-decoration: none;
+            color: rgba(0,0,0,0.9);
+        }
+        &:hover{
+            background-color: rgba(0,0,0,0.1);
+        }
+    }
+}
+
+/* .stay-hotel-navigation-section ul :nth-child(1){
+    border-bottom: 2px solid #003b95;
+} */
+
+.stay-hotel-page-nav-active{
+    border-bottom: 2px solid #003b95;
+}
+
+.stay-hotel-search-section-container{
+    margin-top: 16px;
+}
+
+.stay-hotel-image-title-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    >h1{
+        font-size: 1.5rem;
+        color: rgba(0,0,0,0.8);
+    }
+    >button{
+        padding: 8px 16px;
+        border: none;
+        background-color:#0071c2;
+        color: #fff;
+        cursor: pointer;
+        >a{
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+.stay-hotel-image-container{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 8px;
+    /* border: 1px solid blue; */
+}
+
+.stay-hotel-image-column-one{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    >div{
+        /* border: 1px solid green; */
+        width: 350px;
+        height: 200px;
+        >img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.stay-hotel-image-column-two{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    height: 615px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.stay-hotel-section-two{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    margin-top: 16px;
+    width: 85%;
+}
+
+.inner-stay-hotel-section-two{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.stay-hotel-details-title{
+    /* border: 1px solid red; */
+    padding: 16px 0px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.stay-hotel-room-details{
+    display: felx;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.stay-hotel-room-prices{
+    /* border: 1px solid green; */
+    width: 20%;
+}
+
+.stay-hotel-rows-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* border: 1px solid red; */
+    >div{
+        height: 45px;
+        background-color: #003b95;
+        border: 1px solid #0071c2;
+        font-weight: 600;
+        color: #fff;
+        padding: 4px;
+        word-wrap: break-word;
+    }
+}
+
+.stay-hotel-rows-header :nth-child(1){
+    width: 30%;
+}
+
+.stay-hotel-rows-header :nth-child(2){
+    width: 20%;
+}
+
+.stay-hotel-rows-header :nth-child(3){
+    width: 15%;
+}
+
+.stay-hotel-rows-header :nth-child(4){
+    width: 30%;
+}
+
+.stay-hotel-rows-header :nth-child(5){
+    width: 5%;
+}
+
+.stay-hotel-price-rows-header{
+    border: 1px solid #0071c2;
+    width: 100%;
+    height: 52px;
+    background-color: #003b95;
+}
+
+.stay-hotel-details-rows{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* border: 1px solid red; */
+    >div{
+        /* background-color: #003b95; */
+        border: 1px solid #0071c2;
+        /* font-weight: 600; */
+        /* color: #fff; */
+        padding: 4px;
+        word-wrap: break-word;
+    }
+}
+
+.stay-hotel-details-rows > :nth-child(1){
+    width: 30%;
+    /* border: 1px solid green; */
+}
+
+.stay-hotel-details-rows > :nth-child(2){
+    width: 20%;
+}
+
+.stay-hotel-details-rows > :nth-child(3){
+    width: 15%;
+}
+
+.stay-hotel-details-rows > :nth-child(4){
+    width: 30%;
+}
+
+.stay-hotel-details-rows > :nth-child(5){
+    position: relative;
+    width: 5%;
+}
+
+.stay-custom-select{
+    position: absolute;
+    width: 100px;
+}
+
+.stay-hotel-details-body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 250px;
+    >div{
+        padding: 4px;
+        /* border: 1px solid red; */
+        >span{
+            color: green;
+        }
+    }
+}
+
+.stay-hotel-footer{
+    width: 100%;
+}
+
+.hotel-total-price-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    >button{
+        width: 100px;
+        height: 40px;
+        border: none;
+        margin-top: 8px;
+        background-color:#0071c2;
+        color: #fff;
+        cursor: pointer;
+    }
+    >p{
+        font-weight: 600;
+        color: green;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .stay-hotel-image-mobile-view{
+        display: block;
+        width: 100%;
+    }
+
+    .inner-stay-hotel-image-mobile-view{
+        width: 100%;
+    }
+
+    .stay-hotel-section-one{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid red; */
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .stay-hotel-available-section{
+        width: 100%;
+    }
+
+    .stay-hotel-image-section{
+        display: none;
+    }
+
+    .stay-hotel-section-two{
+        display: none;
+    }
+}

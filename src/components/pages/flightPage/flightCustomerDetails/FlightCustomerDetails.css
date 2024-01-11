@@ -1,0 +1,244 @@
+.flight-customer-details-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+.flight-customer-details-container-body{
+    display: flex;
+    flex-direction: column;
+    width: 83%;
+    gap: 24px;
+    padding-bottom: 16px;
+}
+
+.flight-customer-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+    >h1{
+        font-size: 1.5rem;
+    }
+    >label{
+        color: #003b95;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+}
+
+.inner-flight-customer-details-container-body{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+    gap: 16px;
+}
+
+.inner-flight-customer-details-container-section-one{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 68%;
+}
+
+.flight-customer-contact-details{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid #c9c8c8;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.flight-customer-contact-title{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    >h2{
+        font-size: 1.125rem;
+    }
+    >label{
+        color: #636363;
+        font-size: 0.87rem;
+    }
+}
+
+.flight-customer-contact-email{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 50%;
+    >label{
+        font-weight: 600;
+        font-size: 0.87rem;
+    }
+    >input{
+        height: 2.3rem;
+        padding-left: 4px;
+        width: 100%;
+        outline: none;
+    }
+    >p{
+        color: #636363;
+        font-size: 0.87rem;
+    }
+}
+
+.flight-customer-contact-phone{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 2px;
+    >label{
+        font-weight: 600;
+        font-size: 0.87rem;
+    }
+    >input{
+        height: 2.3rem;
+        padding-left: 4px;
+        width: 100%;
+        outline: none;
+    }
+}
+
+.flight-customer-traveller-details{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c9c8c8;
+    border-radius: 8px;
+    padding: 16px;
+    gap: 16px;
+}
+
+.flight-customer-traveller-contact-title{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    >h2{
+        font-size: 1.125rem;
+    }
+    >label{
+        color: #636363;
+        font-size: 0.87rem;
+    }
+}
+
+.flight-customer-traveller-name{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    >section{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        gap: 2px;
+        >label{
+            font-weight: 600;
+            font-size: 0.87rem;
+        }
+        >input{
+            height: 2.3rem;
+            padding-left: 4px;
+            width: 100%;
+            outline: none;
+        }
+        >p{
+            color: #636363;
+            font-size: 0.87rem;
+        }
+    }
+}
+
+.flight-customer-traveller-gender{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 2px;
+    >label{
+        font-weight: 600;
+        font-size: 0.87rem;
+    }
+    >select{
+        height: 2.3rem;
+        padding-left: 4px;
+        color:#636363;
+    }
+    >p{
+        color: #636363;
+        font-size: 0.87rem;
+    }
+
+}
+
+.flight-submit-container{
+    display: flex;
+    justify-content: flex-end;
+    >button{
+        padding: 8px 24px;
+        border: none;
+        color: #fff;
+        background-color: #003b95;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+}
+
+.inner-flight-customer-details-container-section-two{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 16px;
+    gap: 24px;
+    border: 1px solid #636363;
+    border-radius: 8px;
+}
+
+.star-color{
+    color: red;
+}
+
+.flight-ticket-fee-details{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    >section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        >h2{
+            font-size: 0.9rem;
+        }
+        >h3{
+            font-size: 0.9rem;
+            color: #636363;
+        }
+    }
+}
+
+.flight-ticket-total-fee-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    >section{
+        >h2{
+            font-size: 1.3rem;
+        }
+        >label{
+            font-size: 0.87rem;
+            color: #636363;
+        }
+    }
+    >h2{
+        font-size: 1.3rem;
+    }
+}
+
+.flight-ticket-price-footer-description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.87rem;
+    color: #636363;
+}

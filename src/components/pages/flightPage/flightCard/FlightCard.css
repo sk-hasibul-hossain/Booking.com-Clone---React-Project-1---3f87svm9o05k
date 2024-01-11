@@ -1,0 +1,96 @@
+.flight-card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #949494;
+    border-radius: 4px;
+}
+
+.flight-card-section-one{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 67%;
+    border-right: 1px solid #949494;
+    gap: 8px;
+    padding: 16px;
+    /* border: 1px solid red; */
+}
+
+.flight-departure-time{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    >p{
+        font-size: 0.85rem;
+    }
+}
+
+.card-horizontal-line-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 55%;
+    >label{
+        font-size: 0.85rem;
+        color: #636363;
+    }
+}
+
+.card-horizontal-line{
+    width: 100%;
+    background-color: rgb(39, 39, 39);
+    height: 1px;
+}
+
+.flight-card-section-two{
+    display: flex;
+    /* align-items: center; */
+    /* border: 1px solid red; */
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+    padding: 16px;
+}
+
+.flight-allowed-bags{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    color: #636363;
+    >label{
+        font-size: 0.8rem;
+    }
+}
+
+.flight-bag-icon-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    >svg{
+        width: 25px;
+    }
+}
+
+.flight-card-price-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.9rem;
+    >label{
+        color: #636363;
+        font-size: 0.8rem;
+    }
+}
+
+.flight-card-button{
+    width: 100%;
+    height: 2rem;
+    color: #fff;
+    background-color: #003b95;
+    border: none;
+    cursor: pointer;
+}
