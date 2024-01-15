@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./StayDetailsPage.css";
 import HeaderComponent from "../../../navBar/header/HeaderComponent";
@@ -14,6 +14,17 @@ const PaymentPage = () => {
   const navigate = useNavigate();
   const [bookedHotelDetails, setBookedHotelDetails] = useState([]);
   const [roomDetails, setRoomDetails] = useState([]);
+
+  // const [firstName, setFirsetName] = useState();
+  // const [lastName, setLastName] = useState();
+  // const [emailId, setEmailId] = useState();
+  const [phoneNo, setPhoneNo] = useState();
+  const [isPhoneNoValid, setIsPhoneNoValid] = useState(true);
+
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const emailIdRef = useRef();
+  const phoneNoRef = useRef();
 
   const getBookedHotelDetails = () => {
     const getDetailsFromLocalStorage = JSON.parse(
@@ -83,9 +94,48 @@ const PaymentPage = () => {
     }
   }
 
+  const handleRestictCharacters = (e) => {
+    if (e.target.value?.length <= 10) {
+      setPhoneNo(e.target.value);
+    }
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    navigate(`/hotel/payment?Id=${stayHotelId}&page=hotel`);
+    setIsPhoneNoValid(true);
+    if (!firstNameRef.current.value) {
+      firstNameRef.current.style.border = "1px solid red";
+      lastNameRef.current.style.border = "1px solid #333";
+      emailIdRef.current.style.border = "1px solid #333";
+      phoneNoRef.current.style.border = "1px solid #333";
+      firstNameRef.current.focus();
+    } else if (!lastNameRef.current.value) {
+      lastNameRef.current.focus();
+      lastNameRef.current.style.border = "1px solid red";
+      firstNameRef.current.style.border = "1px solid #333";
+      emailIdRef.current.style.border = "1px solid #333";
+      phoneNoRef.current.style.border = "1px solid #333";
+    } else if (!emailIdRef.current.value) {
+      emailIdRef.current.focus();
+      emailIdRef.current.style.border = "1px solid red";
+      lastNameRef.current.style.border = "1px solid #333";
+      firstNameRef.current.style.border = "1px solid #333";
+      phoneNoRef.current.style.border = "1px solid #333";
+    } else if (
+      !phoneNoRef.current.value ||
+      phoneNoRef.current.value?.length < 10
+    ) {
+      phoneNoRef.current.focus();
+      phoneNoRef.current.style.border = "1px solid red";
+      firstNameRef.current.style.border = "1px solid #333";
+      lastNameRef.current.style.border = "1px solid #333";
+      emailIdRef.current.style.border = "1px solid #333";
+      if (phoneNoRef.current.value?.length < 10) {
+        setIsPhoneNoValid(false);
+      }
+    } else {
+      navigate(`/hotel/payment?Id=${stayHotelId}&page=hotel`);
+    }
   };
   return (
     <div className="stay-details-page-container">
@@ -238,7 +288,7 @@ const PaymentPage = () => {
                     id="firstName"
                     name="firstName"
                     placeholder="Enter your first name.."
-                    required
+                    ref={firstNameRef}
                   />
                 </div>
                 <div className="stay-input-user-details-wraper">
@@ -250,14 +300,11 @@ const PaymentPage = () => {
                     id="lastName"
                     name="lastName"
                     placeholder="Enter your last name.."
-                    required
+                    ref={lastNameRef}
                   />
                 </div>
               </div>
-              <div
-                className="stay-input-user-details-wraper"
-                style={{ width: "49%" }}
-              >
+              <div className="stay-input-user-details-wraper stay-input-custom-width">
                 <label>
                   Email Address <span className="required-filled-color">*</span>
                 </label>
@@ -266,13 +313,10 @@ const PaymentPage = () => {
                   id="email"
                   name="email"
                   placeholder="Enter your last email.."
-                  required
+                  ref={emailIdRef}
                 />
               </div>
-              <div
-                className="stay-input-user-details-wraper"
-                style={{ width: "49%" }}
-              >
+              <div className="stay-input-user-details-wraper stay-input-custom-width">
                 <label>
                   Country/Region{" "}
                   <span className="required-filled-color">*</span>
@@ -281,20 +325,29 @@ const PaymentPage = () => {
                   <option value="India">India</option>
                 </select>
               </div>
-              <div
-                className="stay-input-user-details-wraper stay-detail-input-field-remove-arrow"
-                style={{ width: "49%" }}
-              >
+              <div className="stay-input-user-details-wraper stay-detail-input-field-remove-arrow">
                 <label>
                   Phone No. <span className="required-filled-color">*</span>
                 </label>
-                <input
-                  type="number"
-                  id="mNumber"
-                  name="mNumber"
-                  placeholder="Enter your phone number.."
-                  required
-                />
+                <section>
+                  <strong>+91</strong>
+                  <input
+                    type="number"
+                    id="mNumber"
+                    name="mNumber"
+                    value={phoneNo}
+                    placeholder="Enter your phone number.."
+                    ref={phoneNoRef}
+                    onChange={(e) => {
+                      handleRestictCharacters(e);
+                    }}
+                  />
+                </section>
+                {!isPhoneNoValid && (
+                  <span style={{ color: "red", fontSize: "0.9rem" }}>
+                    Phone number is not valid
+                  </span>
+                )}
               </div>
               <button className="stay-user-details-submit-btn">Next</button>
             </form>

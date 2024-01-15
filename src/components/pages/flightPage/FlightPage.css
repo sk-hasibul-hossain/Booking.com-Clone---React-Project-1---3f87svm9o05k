@@ -85,3 +85,25 @@
     color: #075ad8;
     border-bottom: 1px solid #075ad8;
 }
+
+@media screen and (max-width: 992px){
+    .flight-page-serach-bar-outside{
+        margin-top: -95px;
+    }
+
+    .flight-page-search-value-section{
+        margin-top: 370px;
+    }
+
+    .inner-flight-page-search-value-section{
+        width: 98%;
+    }
+
+    .flight-page-search-value-section-one{
+        display: none;
+    }
+
+    .flight-page-search-value-section-two{
+        width: 100%;
+    }
+}

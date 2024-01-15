@@ -76,3 +76,21 @@
         color: #636363;
     }
 }
+
+@media screen and (max-width: 992px){
+    .inner-flight-landing-page-body-container{
+        flex-direction: column;
+    }
+
+    .flight-frequently-ask-questions-description-section-one{
+        flex-direction: column;
+    }
+
+    .flight-frequently-ask-questions{
+        width: 96%;
+    }
+
+    .flight-frequently-ask-questions-cards{
+        padding: 8px 0px 8px 8px;
+    }
+}

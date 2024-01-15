@@ -13,7 +13,7 @@ const UserProfile = () => {
   const handleLogoutBtn = () => {
     sessionStorage.removeItem("userName");
     sessionStorage.removeItem("userToken");
-    localStorage.removeItem("stayPageValue");
+    // localStorage.removeItem("stayPageValue");
     setIsLogin(false);
     navigate("/signin");
   };

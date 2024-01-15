@@ -58,6 +58,7 @@
     flex-direction: column;
     gap: 4px;
     >input{
+        padding-left: 4px;
         height: 2rem;
         border: 1px solid #8b8b8b;;
         outline: none;
@@ -112,4 +113,21 @@
     position: absolute;
     right: 0px;
     bottom: 16px;
+}
+
+.paymentError{
+    color: red;
+    font-weight: 100;
+    font-size: 0.74rem;
+}
+@media screen and (max-width: 992px){
+    .inner-paymentPage-container{
+        width: 96%;
+    }
+
+    .inner-paymentPage-container-wraper{
+        >form{
+            width: 100%;
+        }
+    }
 }

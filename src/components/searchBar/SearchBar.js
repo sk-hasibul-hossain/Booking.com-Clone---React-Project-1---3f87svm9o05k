@@ -19,14 +19,45 @@ const SearchBar = () => {
   const placeNameRef = useRef();
   const [placeName, setPlaceName] = useState("");
 
+  const handleChangePlaceName = (e) => {
+    setPlaceName(e.target.value);
+    // console.log(e.target.value);
+  };
+
   //calander
   const [stayDate, setStayDate] = useState();
   const [isCalanderOpen, setIsCalanderOpen] = useState(false); //calander-modal
-  const currentDate = new Date();
-  const nextDay = new Date();
-  nextDay.setDate(currentDate.getDate() + 1);
+  const [isValidDate, setIsValidDate] = useState(true);
   const handleStayDate = (date) => {
-    setStayDate(date);
+    // console.log(date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    // console.log(today.getDate());
+    if (date[0] >= today && date[1] >= today) {
+      setIsValidDate(true);
+      setStayDate(date);
+    } else {
+      alert("please Enter valid date");
+      setIsValidDate(false);
+      const localStorageValue = JSON.parse(
+        localStorage.getItem("stayPageValue")
+      );
+
+      if (localStorageValue) {
+        if (localStorageValue[1]) {
+          // console.log(new Date(localStorageValue[1][0]));
+          setStayDate([
+            new Date(localStorageValue[1][0]),
+            new Date(localStorageValue[1][1]),
+          ]);
+        }
+      } else {
+        const date = new Date();
+        const currentDate = date.getDate();
+        date.setDate(currentDate + 1);
+        setStayDate([new Date(), new Date(date)]);
+      }
+    }
   };
   const handleDate = (date) => {
     return date.toDateString().split(" ").slice(0, 3).join(" ");
@@ -98,18 +129,27 @@ const SearchBar = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const localStorageValue = JSON.parse(localStorage.getItem("stayPageValue"));
-  //   if (localStorageValue && localStorageValue.length < 3) {
-  //     setPlaceName(localStorageValue[0]);
-  //     setStayDate([
-  //       new Date(localStorageValue[1][0]),
-  //       new Date(localStorageValue[1][1]),
-  //     ]);
+  useEffect(() => {
+    const localStorageValue = JSON.parse(localStorage.getItem("stayPageValue"));
 
-  //     setOptions(localStorageValue[2]);
-  //   }
-  // }, []);
+    if (localStorageValue) {
+      setPlaceName(localStorageValue[0]);
+      if (localStorageValue[1]) {
+        // console.log(new Date(localStorageValue[1][0]));
+        setStayDate([
+          new Date(localStorageValue[1][0]),
+          new Date(localStorageValue[1][1]),
+        ]);
+      }
+
+      setOptions(localStorageValue[2]);
+    } else {
+      const date = new Date();
+      const currentDate = date.getDate();
+      date.setDate(currentDate + 1);
+      setStayDate([new Date(), new Date(date)]);
+    }
+  }, []);
   return (
     <section className="search-area">
       <div className="search-container">
@@ -122,10 +162,7 @@ const SearchBar = () => {
             value={placeName}
             placeholder="where are you going?"
             ref={placeNameRef}
-            onChange={(e) => {
-              setPlaceName(e.target.value);
-              // console.log(e.target.value);
-            }}
+            onChange={handleChangePlaceName}
           />
           {placeName && (
             <span
@@ -149,9 +186,10 @@ const SearchBar = () => {
           </span>
           {/*<div>Fri, Dec 1 - Sun, Dec 3</div>*/}
           <div className="stay-search-calander">
-            {stayDate
-              ? `${handleDate(stayDate[0])} - ${handleDate(stayDate[1])}`
-              : `${handleDate(currentDate)} - ${handleDate(nextDay)}`}
+            {stayDate &&
+              `${handleDate(new Date(stayDate[0]))} - ${handleDate(
+                new Date(stayDate[1])
+              )}`}
           </div>
           <div className="stay-calander-container">
             <div className="stay-calander-list">
@@ -171,7 +209,7 @@ const SearchBar = () => {
                     <Calendar
                       className="custom-calander-style"
                       onChange={handleStayDate}
-                      value={stayDate ? stayDate : new Date()}
+                      value={stayDate}
                       selectRange="true"
                     />
                   </div>

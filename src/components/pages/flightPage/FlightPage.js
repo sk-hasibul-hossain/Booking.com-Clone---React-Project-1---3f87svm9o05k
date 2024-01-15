@@ -53,9 +53,9 @@ export const FlightPage = () => {
 
   const handleSort = (type) => {
     setSelectedSortType(type);
-    // console.log(tempSortData, tempGetSearchedFlightDetails);
+    // console.log(tempSortData, type);
     if (type === "best") {
-      setGetSearchedFlightDetails(tempGetSearchedFlightDetails);
+      setGetSearchedFlightDetails([...tempSortData]);
     } else if (type === "cheap") {
       setGetSearchedFlightDetails((prev) => {
         return prev.sort((a, b) => a.ticketPrice - b.ticketPrice);

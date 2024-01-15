@@ -3,7 +3,7 @@ import "./Signin.css";
 import CommonNav from "../signinSignupNavbar/CommonNav";
 import axios from "axios";
 import { getHeaderWithProjectID } from "../../../utills/services";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../provider/AuthProvider";
 
 const Signin = () => {
@@ -13,6 +13,7 @@ const Signin = () => {
   const [isEmailPasswordCorrect, setIsEmailPasswordCorrect] = useState(true);
   const [ispasswordHide, setIspasswordHide] = useState(false);
   const navigate = useNavigate();
+  const { state } = useLocation();
   const { setIsLogin } = useAuth();
 
   const loginUser = async (userDetails) => {
@@ -34,7 +35,12 @@ const Signin = () => {
         sessionStorage.setItem("userName", JSON.stringify(data.data.name));
         setIsLogin(true);
         // ispasswordHide(false);
-        navigate("/");
+        if (state) {
+          navigate(state.prevPath);
+        } else {
+          navigate("/");
+        }
+        // navigate("/");
       }
     } catch (err) {
       console.log("err", err);

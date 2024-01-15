@@ -12,7 +12,7 @@ const flightLandingPage = () => {
       <div className="flight-search-area">
         <FlightSearchBar />
       </div>
-      <div>
+      <div className="flight-search-body-landing-page-one-outside-container">
         <FlightSearchIBody />
       </div>
       <footer>

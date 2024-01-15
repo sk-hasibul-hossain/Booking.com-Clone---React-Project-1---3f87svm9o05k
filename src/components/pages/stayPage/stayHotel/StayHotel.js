@@ -176,9 +176,11 @@ const stayHotel = () => {
           <div className="stay-hotel-room-details">
             <div className="stay-hotel-rows-header">
               <div>Room Type</div>
-              <div>Number of guests</div>
+              <div className="stay-number-of-guests-style">
+                Number of guests
+              </div>
               <div>Price for {stayDays} nights</div>
-              <div>Your Choices</div>
+              <div className="stay-number-of-guests-style">Your Choices</div>
               <div>Select Rooms</div>
             </div>
             {hotelData &&
@@ -202,9 +204,11 @@ const stayHotel = () => {
                         })}
                       </div>
                     </div>
-                    <div></div>
+                    <div className="stay-number-of-guests-values-style"></div>
                     <div>{room.costPerNight * stayDays}</div>
-                    <div>N/A</div>
+                    <div className="stay-number-of-guests-values-style">
+                      N/A
+                    </div>
                     <div>
                       <select
                         className="stay-custom-select"

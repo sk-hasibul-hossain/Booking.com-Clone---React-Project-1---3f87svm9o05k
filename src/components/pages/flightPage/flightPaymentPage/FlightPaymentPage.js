@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./FlightPaymentPage.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,6 +10,15 @@ const PaymentPage = () => {
   const [cardNmber, setCardNumber] = useState();
   const [expiryDate, setExpireyDate] = useState();
   const [cvvNumber, setCvvNumber] = useState();
+
+  const [isCardNumberError, setIsCardNumberError] = useState(false);
+  const [isCVVValid, setIsCVVValid] = useState(false);
+
+  const nameRef = useRef();
+  const cardNoRef = useRef();
+  const dateRef = useRef();
+  const cvvRef = useRef();
+
   const { search } = useLocation();
   const [stayDetails, setStayDetails] = useState();
   const [userToken, setUserToken] = useState();
@@ -40,7 +49,32 @@ const PaymentPage = () => {
 
   const handlePaymetSubmit = (e) => {
     e.preventDefault();
-    if (cardHolderName && cardNmber && expiryDate && cvvNumber) {
+    if (!nameRef.current.value) {
+      nameRef.current.focus();
+      setIsCardNumberError(false);
+      setIsCVVValid(false);
+    } else if (!cardNoRef.current.value) {
+      cardNoRef.current.focus();
+      setIsCardNumberError(false);
+      setIsCVVValid(false);
+    } else if (cardNoRef.current.value?.length < 19) {
+      cardNoRef.current.focus();
+      setIsCardNumberError(true);
+      setIsCVVValid(false);
+    } else if (!expiryDate) {
+      dateRef.current.focus();
+      setIsCardNumberError(false);
+      setIsCVVValid(false);
+    } else if (!cvvRef.current.value) {
+      cvvRef.current.focus();
+      setIsCardNumberError(false);
+      setIsCVVValid(false);
+    } else if (cvvRef.current.value?.length < 3) {
+      setIsCVVValid(true);
+      setIsCardNumberError(false);
+    } else {
+      setIsCardNumberError(false);
+      setIsCVVValid(false);
       const payLoad = {
         bookingType: query.get("page"),
         bookingDetails: {
@@ -53,6 +87,19 @@ const PaymentPage = () => {
       bookedHotel(payLoad);
       setSubmitted(true);
     }
+    // if (cardHolderName && cardNmber && expiryDate && cvvNumber) {
+    //   const payLoad = {
+    //     bookingType: query.get("page"),
+    //     bookingDetails: {
+    //       hotelId: query.get("Id"),
+    //       startDate: new Date(stayDetails[1][0]),
+    //       endDate: new Date(stayDetails[1][1]),
+    //     },
+    //   };
+    //   // console.log(payLoad, userToken);
+    //   bookedHotel(payLoad);
+    //   setSubmitted(true);
+    // }
   };
 
   const getLocalStrorageData = (keyName) => {
@@ -101,7 +148,7 @@ const PaymentPage = () => {
               <input
                 type="text"
                 placeholder="Full name..."
-                required
+                ref={nameRef}
                 value={cardHolderName}
                 onChange={(e) => {
                   setCardHolderName(e.target.value);
@@ -115,14 +162,32 @@ const PaymentPage = () => {
                   <FontAwesomeIcon icon={faCreditCard} />
                 </span>
                 <input
-                  type="number"
-                  required
+                  type="text"
+                  maxLength="19" // To limit the total length to 19 characters (16 digits + 3 spaces)
                   value={cardNmber}
+                  ref={cardNoRef}
                   onChange={(e) => {
-                    setCardNumber(e.target.value);
+                    // const val = e.target.value?.split("");
+                    // val.push("10");
+                    // console.log(val.join(""));
+                    // setCardNumber(e.target.value);
+                    const newValue = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+                    const formattedValue = newValue.replace(
+                      /(\d{4})(?=\d)/g,
+                      "$1 "
+                    ); // Add space every four digits
+
+                    if (formattedValue.length <= 19) {
+                      setCardNumber(formattedValue);
+                    }
                   }}
                 />
               </div>
+              {isCardNumberError && (
+                <span className="paymentError">
+                  Please enter a valid card number
+                </span>
+              )}
             </div>
             <div className="payment-card-date-validation-input-wraper">
               <div className="payemt-card-holder-input-wraper">
@@ -130,7 +195,7 @@ const PaymentPage = () => {
                 <input
                   type="month"
                   placeholder="Full name..."
-                  required
+                  ref={dateRef}
                   value={expiryDate}
                   onChange={(e) => {
                     setExpireyDate(e.target.value);
@@ -147,11 +212,17 @@ const PaymentPage = () => {
                     type="number"
                     required
                     value={cvvNumber}
+                    ref={cvvRef}
                     onChange={(e) => {
-                      setCvvNumber(e.target.value);
+                      if (e.target.value?.length <= 3) {
+                        setCvvNumber(e.target.value);
+                      }
                     }}
                   />
                 </div>
+                {isCVVValid && (
+                  <span className="paymentError">Please enter a valid CVV</span>
+                )}
               </div>
             </div>
             <button className="payment-submit-btn">Pay Now</button>

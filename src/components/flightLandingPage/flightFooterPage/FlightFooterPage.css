@@ -39,3 +39,17 @@
         font-size: 0.725rem;
     }
 }
+
+@media screen and (max-width: 992px){
+    .inner-flight-footer-page-container{
+        flex-direction: column;
+        width: 98%;
+        gap: 4px;
+        >section{
+            >h1{
+                background-color: rgb(219, 218, 218);
+                padding: 4px 0px 4px 4px;
+            }
+        }
+    }
+}

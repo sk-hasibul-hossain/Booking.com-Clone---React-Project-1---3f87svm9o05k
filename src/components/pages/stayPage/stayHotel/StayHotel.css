@@ -261,12 +261,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 250px;
+    width: 100%;
     >div{
         padding: 4px;
         /* border: 1px solid red; */
         >span{
             color: green;
+        }
+        >div{
+            border: 1px solid red;
         }
     }
 }
@@ -323,6 +326,74 @@
     }
 
     .stay-hotel-section-two{
+        width: 98%;
+    }
+
+    .stay-number-of-guests-style{
         display: none;
+    }
+
+    .stay-number-of-guests-values-style{
+        display: none;
+    }
+
+    .inner-stay-hotel-section-two{
+        /* border: 1px solid red; */
+    }
+
+    .stay-hotel-rows-header{
+        >div{
+            width: 100%;
+        }
+    }
+
+    .stay-hotel-rows-header :nth-child(1){
+        width: 40%;
+    }
+    
+    .stay-hotel-rows-header :nth-child(2){
+        width: 0%;
+    }
+    
+    .stay-hotel-rows-header :nth-child(3){
+        width: 30%;
+    }
+    
+    .stay-hotel-rows-header :nth-child(4){
+        width: 0%;
+    }
+    
+    .stay-hotel-rows-header :nth-child(5){
+        width: 30%;
+    }
+
+    
+    .stay-hotel-details-rows > :nth-child(1){
+        width: 40%;
+        /* border: 1px solid green; */
+    }
+    
+    .stay-hotel-details-rows > :nth-child(2){
+        width: 0%;
+    }
+    
+    .stay-hotel-details-rows > :nth-child(3){
+        width: 30%;
+    }
+    
+    .stay-hotel-details-rows > :nth-child(4){
+        width: 0%;
+    }
+    
+    .stay-hotel-details-rows > :nth-child(5){
+        position: relative;
+        width: 30%;
+    }
+
+    .hotel-total-price-container{
+        >button{
+            width: 100%;
+            border-radius: 4px;
+        }
     }
 }

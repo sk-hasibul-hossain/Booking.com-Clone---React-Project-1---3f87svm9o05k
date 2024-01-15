@@ -147,8 +147,25 @@ const FlightPageSearchBar = ({
   };
 
   const handleFlightChangeDate = (date) => {
-    console.log(date);
-    setFlightDate(date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    // console.log(date);
+    if (date[0] >= today && date[1] >= today) {
+      setFlightDate(date);
+    } else {
+      const ls = JSON.parse(localStorage.getItem("flightSearchData"));
+      alert("please Enter valid date");
+      if (ls) {
+        if (ls[2]) {
+          setFlightDate([new Date(ls[2][0]), new Date(ls[2][1])]);
+        }
+      } else {
+        const date = new Date();
+        const currentDate = date.getDate();
+        date.setDate(currentDate + 1);
+        setFlightDate([new Date(), date]);
+      }
+    }
   };
 
   const increase = (selectIncrease) => {
@@ -181,7 +198,7 @@ const FlightPageSearchBar = ({
     const config = getHeaderWithProjectID();
     const searchParams = encodeURIComponent(JSON.stringify(data));
     const day = date.toDateString().split(0, 1)[0].split(" ")[0];
-    console.log(searchParams, day);
+    // console.log(searchParams, day);
     try {
       const response = await axios.get(
         `${URL}${searchParams}&day=${day}`,

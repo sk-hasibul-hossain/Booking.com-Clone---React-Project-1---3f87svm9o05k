@@ -69,6 +69,8 @@ const StayHotelsAvailableSection = ({ hotelSearchData }) => {
   };
   const handleOptionSubmit = () => {
     setIsOptionOpen((prev) => !prev);
+    setIscheckInOpen(false);
+    setIscheckOutOpen(false);
   };
   return (
     <div className="stay-hotel-available-section-custom-container">
@@ -92,6 +94,8 @@ const StayHotelsAvailableSection = ({ hotelSearchData }) => {
           className="stay-hotel-check-in-date-input-box"
           onClick={() => {
             setIscheckInOpen((prev) => !prev);
+            setIscheckOutOpen(false);
+            setIsOptionOpen(false);
           }}
         >
           <span>
@@ -120,6 +124,8 @@ const StayHotelsAvailableSection = ({ hotelSearchData }) => {
           className="stay-hotel-check-out-date-input-box"
           onClick={() => {
             setIscheckOutOpen((prev) => !prev);
+            setIscheckInOpen(false);
+            setIsOptionOpen(false);
           }}
         >
           <span>
@@ -136,7 +142,7 @@ const StayHotelsAvailableSection = ({ hotelSearchData }) => {
               className="stay-hotel-room-check-in-calaner-custom"
               value={checkInDate}
               onChange={(date) => {
-                setCheckInDate(date);
+                setCheckOutDate(date);
               }}
             />
           )}

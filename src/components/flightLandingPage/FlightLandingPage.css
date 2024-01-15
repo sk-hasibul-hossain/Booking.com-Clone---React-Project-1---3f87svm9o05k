@@ -1,3 +1,12 @@
 .flight-search-area{
     position: relative;
 }
+
+@media screen and (max-width: 992px){
+    .flight-search-area{
+        margin-top: 95px;
+    }
+    .flight-search-body-landing-page-one-outside-container{
+        margin-top: 273px;
+    }
+}

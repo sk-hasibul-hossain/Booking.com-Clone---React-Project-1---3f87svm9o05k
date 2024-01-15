@@ -138,7 +138,7 @@
 }
 
 .flight-search-ariport-inter-change-container{ 
-    width: 10%;
+    width: 100px;
     position: relative;
     cursor: pointer;
 }
@@ -177,7 +177,7 @@
 .flight-right-arrow{
     position: absolute;
     top: -1px;
-    left: 10px;
+    left: 7px;
 }
 
 .flight-left-arrow{
@@ -283,5 +283,40 @@
     >span{
         padding: 4px;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 992px){
+    /* .flight-search-area{
+        margin-top: 95px;
+    } */
+    .flight-search-container{
+        width: 96%;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+        padding-bottom: 16px;
+    }
+
+    .flight-search-ariport-inter-change-container{ 
+        width: 40px;
+    }
+
+    .flight-right-arrow{
+        position: absolute;
+        top: -2px;
+        left: 16px;
+        transform: rotateZ(90deg);
+    }
+    
+    .flight-left-arrow{
+        position: absolute;
+        bottom: -2px;
+        left: 9px;
+        transform: rotateZ(90deg);
+    }
+
+    .flight-search-btn-container{
+        width: 100%;
     }
 }

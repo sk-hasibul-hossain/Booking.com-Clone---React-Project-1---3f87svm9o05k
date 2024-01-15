@@ -27,6 +27,8 @@ const FlightCustomerDetails = () => {
   const [lastName, setLastName] = useState();
   const [genderVal, setGenderVal] = useState();
 
+  const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(false);
+
   const getFlightData = async (flightId) => {
     const URL =
       "https://academics.newtonschool.co/api/v1/bookingportals/flight/";
@@ -50,14 +52,22 @@ const FlightCustomerDetails = () => {
   const handleSubmitBtn = () => {
     if (!emailVal) {
       emailRef.current.focus();
+      setIsValidPhoneNumber(false);
     } else if (!phoneNum) {
       phoneRef.current.focus();
+      setIsValidPhoneNumber(false);
+    } else if (phoneNum?.length < 10) {
+      phoneRef.current.focus();
+      setIsValidPhoneNumber(true);
     } else if (!firstName) {
       firstNameRef.current.focus();
+      setIsValidPhoneNumber(false);
     } else if (!lastName) {
       lastNameRef.current.focus();
+      setIsValidPhoneNumber(false);
     } else if (!genderVal) {
       genderRef.current.focus();
+      setIsValidPhoneNumber(false);
     } else {
       navigate(`/flight/payment?Id=${query.get("Id")}&page=flight`);
     }
@@ -101,16 +111,26 @@ const FlightCustomerDetails = () => {
                 <label>
                   Phone number<span className="star-color">*</span>
                 </label>
-                <input
-                  type="number"
-                  name="phone"
-                  placeholder="Eneter your phone number"
-                  ref={phoneRef}
-                  value={phoneNum}
-                  onChange={(ev) => {
-                    setPhoneNum(ev.target.value);
-                  }}
-                />
+                <section>
+                  <label>+91</label>
+                  <input
+                    type="number"
+                    name="phone"
+                    placeholder="Eneter your phone number"
+                    ref={phoneRef}
+                    value={phoneNum}
+                    onChange={(ev) => {
+                      if (ev.target.value?.length <= 10) {
+                        setPhoneNum(ev.target.value);
+                      }
+                    }}
+                  />
+                </section>
+                {isValidPhoneNumber && (
+                  <label style={{ color: "red" }}>
+                    Please enter valid phone number
+                  </label>
+                )}
               </div>
             </div>
             <div className="flight-customer-traveller-details">
