@@ -3,6 +3,7 @@ import "./Signup.css";
 import CommonNav from "../signinSignupNavbar/CommonNav";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../../provider/AuthProvider";
 
 const Signup = () => {
   const userNameRef = useRef();
@@ -13,6 +14,7 @@ const Signup = () => {
   const [isPassError, setIsPassError] = useState(false);
   const [isUserExist, setIsUserExist] = useState(false);
   const navigate = useNavigate();
+  const { setIsLogin } = useAuth();
 
   const createUser = async (userDetails) => {
     // const user = JSON.stringify(userDetails);
@@ -31,6 +33,7 @@ const Signup = () => {
       );
       const data = response.data;
       const token = data.token;
+      setIsLogin(true);
       if (token) {
         sessionStorage.setItem("userToken", token);
         sessionStorage.setItem("userName", JSON.stringify(data.data.user.name));

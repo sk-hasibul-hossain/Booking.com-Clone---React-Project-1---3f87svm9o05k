@@ -1,0 +1,45 @@
+.booking-container-outer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.booking-show-area-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* border: 1px solid red; */
+    margin-top: 16px;
+    width: 82.3%;
+}
+
+.booking-card{
+    background-color: rgb(220, 231, 220);
+    width: 100%;
+}
+
+.booking-items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    gap: 4px;
+    border: 1px solid rgb(17, 99, 9);
+}
+
+.booking-items .item{
+    /* background-color: green; */
+    /* width: 100%; */
+    padding: 8px 0px;
+    color: rgb(28, 12, 87);
+}
+
+.status-confirem{
+    color: green;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.no-booked{
+    width: 100%;
+    text-align: center;
+}

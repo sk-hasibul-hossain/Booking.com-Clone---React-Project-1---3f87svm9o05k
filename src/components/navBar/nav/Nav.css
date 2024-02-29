@@ -67,6 +67,16 @@
     width: 5rem;
 }
 
+.inactive{
+    border: 1px solid transparent;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    background-color: transparent;
+    cursor:not-allowed;
+}
+
 
 /*Small screen*/
 @media screen and (max-width: 992px){

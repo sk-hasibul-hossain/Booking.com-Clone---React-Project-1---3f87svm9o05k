@@ -23,8 +23,8 @@ const PaymentPage = () => {
   const [stayDetails, setStayDetails] = useState();
   const [userToken, setUserToken] = useState();
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState();
   const query = new URLSearchParams(search);
-
   const bookedHotel = async (userDetails) => {
     try {
       const config = {
@@ -41,9 +41,11 @@ const PaymentPage = () => {
         { ...userDetails, ...appType },
         config
       );
+      setSubmitted(true);
       // console.log("response", response);
     } catch (err) {
       console.log("error", err);
+      setError(err.response.data.message);
     }
   };
 
@@ -85,7 +87,7 @@ const PaymentPage = () => {
       };
       // console.log(payLoad, userToken);
       bookedHotel(payLoad);
-      setSubmitted(true);
+      // setSubmitted(true);
     }
     // if (cardHolderName && cardNmber && expiryDate && cvvNumber) {
     //   const payLoad = {
@@ -225,6 +227,7 @@ const PaymentPage = () => {
                 )}
               </div>
             </div>
+            {error && <p style={{ color: "red" }}>{error}</p>}
             <button className="payment-submit-btn">Pay Now</button>
           </form>
         </div>

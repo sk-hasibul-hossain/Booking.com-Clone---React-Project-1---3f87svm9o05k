@@ -42,6 +42,7 @@ const FlightCustomerDetails = () => {
     }
   };
   useEffect(() => {
+    document.body.style.overflow = "auto";
     const ls = JSON.parse(localStorage.getItem("flightSearchData"));
     if (ls) {
       setAdults(ls[3].adults);

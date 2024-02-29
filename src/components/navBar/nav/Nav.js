@@ -14,6 +14,7 @@ import { NavLink } from "react-router-dom";
 const Nav = ({ page }) => {
   // const [pageName, setPageName] = useState(page);
   // console.log(page);
+  console.log("page", page);
   return (
     <div className="navbar-container">
       <NavLink
@@ -41,30 +42,42 @@ const Nav = ({ page }) => {
           Flight
         </div>
       </NavLink>
-      <div className="nav-btn flight-plus-hotel-box-width">
+      <NavLink
+        to="/uderconstration"
+        className={`nav-btn flight-plus-hotel-box-width inactive`}
+      >
         <span>
           <FontAwesomeIcon icon={faGlobe} />
         </span>
         <p>Flight + Hotel</p>
-      </div>
-      <div className="nav-btn flight-plus-hotel-box-width">
+      </NavLink>
+      <NavLink
+        to="/uderconstration"
+        className="nav-btn flight-plus-hotel-box-width inactive"
+      >
         <span>
           <FontAwesomeIcon icon={faCar} />
         </span>
         <p>Car rentals</p>
-      </div>
-      <div className="nav-btn flight-plus-hotel-box-width">
+      </NavLink>
+      <NavLink
+        to="/uderconstration"
+        className="nav-btn flight-plus-hotel-box-width inactive"
+      >
         <span>
           <FontAwesomeIcon icon={faMagnet} />
         </span>
         <p>Attractions</p>
-      </div>
-      <div className="nav-btn flight-plus-hotel-box-width">
+      </NavLink>
+      <NavLink
+        to="/uderconstration"
+        className="nav-btn flight-plus-hotel-box-width inactive"
+      >
         <span>
           <FontAwesomeIcon icon={faTaxi} />
         </span>
         <p>Airport taxis</p>
-      </div>
+      </NavLink>
     </div>
   );
 };

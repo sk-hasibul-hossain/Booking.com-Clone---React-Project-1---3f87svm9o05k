@@ -39,6 +39,14 @@ const UserProfile = () => {
       {profileToggleBtn && (
         <div className="user-profile-modal-conatiner">
           <div className="inner-user-profile-modal-conatiner">
+            <div
+              className="profile-booking-btn"
+              onClick={() => {
+                navigate("/booking");
+              }}
+            >
+              <span>Bookings</span>
+            </div>
             <div className="profile-logout-btn" onClick={handleLogoutBtn}>
               <span>
                 <FontAwesomeIcon icon={faRightFromBracket} />

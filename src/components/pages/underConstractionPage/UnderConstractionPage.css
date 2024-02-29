@@ -1,0 +1,9 @@
+.under-constraction-page-body{
+    height: 100vh;
+    /* border: 1px solid red; */
+    /* height: 100%; */
+    >img{
+        width: 100%;
+        height: 100%;
+    }
+}

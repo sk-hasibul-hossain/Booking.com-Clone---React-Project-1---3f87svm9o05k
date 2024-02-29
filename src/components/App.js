@@ -13,6 +13,8 @@ import FlightLandingPage from "./flightLandingPage/FlightLandingPage";
 import { FlightPage } from "./pages/flightPage/FlightPage";
 import FlightCustomerDetails from "./pages/flightPage/flightCustomerDetails/FlightCustomerDetails";
 import FlightPaymentPage from "./pages/flightPage/flightPaymentPage/FlightPaymentPage";
+import BookingPage from "./pages/bookingPage/BookingPage";
+import UnderConstractionPage from "./pages/underConstractionPage/UnderConstractionPage";
 
 function App() {
   return (
@@ -81,6 +83,18 @@ function App() {
                 <FlightPaymentPage />
               </AuthNavigator>
             }
+          />
+          <Route
+            path="/booking"
+            element={
+              <AuthNavigator>
+                <BookingPage />
+              </AuthNavigator>
+            }
+          />
+          <Route
+            path={"/uderconstration"}
+            element={<UnderConstractionPage />}
           />
         </Routes>
       </AuthProvider>
