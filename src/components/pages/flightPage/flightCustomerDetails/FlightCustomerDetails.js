@@ -80,7 +80,7 @@ const FlightCustomerDetails = () => {
       </div>
       <div className="flight-customer-details-container-body">
         <div className="flight-customer-header">
-          <h1>Fill in Your details</h1>
+          <h1>Fill in your details</h1>
           <label>View flight details</label>
         </div>
         <div className="inner-flight-customer-details-container-body">

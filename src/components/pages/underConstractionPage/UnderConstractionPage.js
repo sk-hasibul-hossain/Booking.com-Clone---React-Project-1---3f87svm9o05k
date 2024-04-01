@@ -13,6 +13,7 @@ const UnderConstractionPage = () => {
       </div>
       <div className="under-constraction-page-body">
         <img src={image} />
+        <p className="under-constraction-page-content">This page in process</p>
       </div>
     </div>
   );

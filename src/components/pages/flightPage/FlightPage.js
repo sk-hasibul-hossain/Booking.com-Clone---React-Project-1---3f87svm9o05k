@@ -160,7 +160,7 @@ export const FlightPage = () => {
                   handleSort("cheap");
                 }}
               >
-                Chepest
+                Cheapest
               </div>
               <div
                 className={`filter-page-search-value-section-box ${

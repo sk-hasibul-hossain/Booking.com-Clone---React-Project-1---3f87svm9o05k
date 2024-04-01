@@ -45,6 +45,7 @@ const PaymentPage = () => {
       // console.log("response", response);
     } catch (err) {
       console.log("error", err);
+      console.log(err);
       setError(err.response.data.message);
     }
   };
@@ -80,11 +81,16 @@ const PaymentPage = () => {
       const payLoad = {
         bookingType: query.get("page"),
         bookingDetails: {
-          hotelId: query.get("Id"),
-          startDate: new Date(stayDetails[1][0]),
-          endDate: new Date(stayDetails[1][1]),
+          flightId: query.get("Id"),
+          startDate: new Date(stayDetails[2][0]),
+          endDate: new Date(stayDetails[2][1]),
         },
       };
+      console.log(payLoad);
+      console.log(
+        new Date(stayDetails[2][0]).toString(),
+        new Date(stayDetails[2][1]).toString()
+      );
       // console.log(payLoad, userToken);
       bookedHotel(payLoad);
       // setSubmitted(true);
@@ -114,6 +120,7 @@ const PaymentPage = () => {
 
   useEffect(() => {
     const localStorageData = getLocalStrorageData("flightSearchData");
+
     setStayDetails(JSON.parse(localStorageData));
     const sessionStorage = getSessionStrorage();
     setUserToken(sessionStorage);

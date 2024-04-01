@@ -1,4 +1,8 @@
 .under-constraction-page-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
     height: 100vh;
     /* border: 1px solid red; */
     /* height: 100%; */
@@ -6,4 +10,12 @@
         width: 100%;
         height: 100%;
     }
+}
+
+.under-constraction-page-content{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    color: red;
+    top: 16px;
 }

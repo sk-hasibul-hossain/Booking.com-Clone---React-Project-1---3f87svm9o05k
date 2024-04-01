@@ -16,6 +16,7 @@ const FlightTicketModel = ({ closeModal, selectedFlightId }) => {
   const [childrens, setChildrens] = useState();
   const [adults, setAdults] = useState();
   const [flightClass, setflightClass] = useState("hello");
+  const [isFlightAvailable, setIsFlightAvailable] = useState();
   const getFlightData = async (flightId) => {
     const URL =
       "https://academics.newtonschool.co/api/v1/bookingportals/flight/";
@@ -43,6 +44,9 @@ const FlightTicketModel = ({ closeModal, selectedFlightId }) => {
     }
     getFlightData(selectedFlightId);
   }, []);
+  const handleModalSubmit = () => {
+    navigate(`/flightpage/userdetails?Id=${selectedFlightId}`);
+  };
   return createPortal(
     <div className="flight-tickit-modal-container">
       <div className="inner-flight-tickit-modal-container">
@@ -173,13 +177,7 @@ const FlightTicketModel = ({ closeModal, selectedFlightId }) => {
             </h2>
             <label>Total price for all travellers</label>
           </section>
-          <button
-            onClick={() => {
-              navigate(`/flightpage/userdetails?Id=${selectedFlightId}`);
-            }}
-          >
-            Select
-          </button>
+          <button onClick={handleModalSubmit}>Select</button>
         </section>
       </div>
     </div>,

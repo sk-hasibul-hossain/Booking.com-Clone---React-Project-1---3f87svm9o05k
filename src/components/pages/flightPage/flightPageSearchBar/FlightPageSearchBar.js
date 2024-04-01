@@ -205,6 +205,7 @@ const FlightPageSearchBar = ({
         config
       );
       setGetSearchedFlightDetails(response.data.data.flights);
+      console.log(response.data.data.flights);
       setTempGetSearchedFlightDetails([...response.data.data.flights]);
       setTempSortData([...response.data.data.flights]);
       // console.log(response.data.data.flights);

@@ -30,6 +30,7 @@
             height: 2rem;
             border: 1px solid rgb(145, 143, 143);
             border-radius: 4px;
+            padding: 4px 8px;
             &:focus{
                 border: 2px solid #006ce4;
             }
@@ -54,13 +55,14 @@
         border: 1px solid rgb(145, 143, 143);
         border-radius: 4px;
         width: 100%;
+        padding: 4px 8px;
         &:focus{
             border: 2px solid #006ce4;
         }
     }
     >span{
         position: absolute;
-        right: 4px;
+        right: 12px;
         font-size: 0.85rem;
         font-weight: 600;
         color: rgb(48, 47, 47);

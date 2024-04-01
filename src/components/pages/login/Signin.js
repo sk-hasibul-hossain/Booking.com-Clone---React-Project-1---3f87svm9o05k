@@ -95,7 +95,7 @@ const Signin = () => {
             {!isEmailPasswordCorrect && (
               <p className="error">Email or password is incorrect</p>
             )}
-            <button className="btn">Sign In</button>
+            <button className="btn">Login</button>
           </form>
           <button
             className="btn"
