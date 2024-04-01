@@ -30,6 +30,7 @@
             height: 2rem;
             border: 1px solid rgb(145, 143, 143);
             border-radius: 4px;
+            padding: 4px 8px;
             &:focus{
                 border: 2px solid #006ce4;
             }
