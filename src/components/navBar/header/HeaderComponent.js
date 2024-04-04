@@ -10,6 +10,9 @@ import UserProfile from "../../userProfile/UserProfile";
 const HeaderComponent = () => {
   const navigate = useNavigate();
   const { isLogin } = useAuth();
+  const callAlert = () => {
+    alert("This functionality is yet to be implemented");
+  };
   return (
     <div className="header-component-container">
       <div
@@ -31,7 +34,13 @@ const HeaderComponent = () => {
         </svg>
       </div>
       <div className="header-list-container">
-        <p className="currency-name" title="Select your currency">
+        <p
+          className="currency-name"
+          title="Select your currency"
+          onClick={() => {
+            callAlert();
+          }}
+        >
           INR
         </p>
         <div className="currency-flag-container">
@@ -40,12 +49,28 @@ const HeaderComponent = () => {
             src="https://t-cf.bstatic.com/design-assets/assets/v3.101.0/images-flags/In@3x.png"
             alt="indian-currency-flag"
             title="Select your language"
+            onClick={() => {
+              callAlert();
+            }}
           />
         </div>
-        <div className="customer-service-symbol" title="Customer service help">
+        <div
+          className="customer-service-symbol"
+          title="Customer service help"
+          onClick={() => {
+            callAlert();
+          }}
+        >
           <FontAwesomeIcon icon={faCircleQuestion} />
         </div>
-        <p className="list-poerty-content">List your property</p>
+        <p
+          className="list-poerty-content"
+          onClick={() => {
+            callAlert();
+          }}
+        >
+          List your property
+        </p>
         <div className="user-register-signin-container">
           {isLogin ? (
             <div class="stay-profile">
@@ -59,7 +84,7 @@ const HeaderComponent = () => {
                   navigate("/signup");
                 }}
               >
-                Register
+                Sign in
               </button>
               <button
                 className="register-signin-btn"
@@ -67,7 +92,7 @@ const HeaderComponent = () => {
                   navigate("/signin");
                 }}
               >
-                Sign in
+                Login
               </button>
             </>
           )}

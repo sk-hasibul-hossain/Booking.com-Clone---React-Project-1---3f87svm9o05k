@@ -118,6 +118,14 @@ const Signup = () => {
             {isUserExist && <p className="error">User Already Exist</p>}
             <button className="btn">Create your account</button>
           </form>
+          <button
+            className="btn"
+            onClick={() => {
+              navigate("/signin");
+            }}
+          >
+            Back to login
+          </button>
         </div>
       </div>
     </div>

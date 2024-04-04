@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./SearchBar.css";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
@@ -12,8 +13,13 @@ import {
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useNavigate } from "react-router-dom";
+import SearchCitiesBox from "./searchCitiesBox/SearchCitiesBox";
 
 const SearchBar = () => {
+  //prdefined value store
+  const [cities, setCities] = useState({ data: [], isError: true });
+  const [isCitySectionShow, setIsCitySectionShow] = useState(false);
+
   const navigate = useNavigate();
   //text input place
   const placeNameRef = useRef();
@@ -129,6 +135,27 @@ const SearchBar = () => {
     }
   };
 
+  const getAllCitiesAPI = async () => {
+    try {
+      const headers = {
+        projectID: "3f87svm9o05k",
+      };
+      const response = await axios.get(
+        "https://academics.newtonschool.co/api/v1/bookingportals/city",
+        { headers }
+      );
+      setCities({
+        data: response.data.data.cities,
+        isError: false,
+      });
+    } catch (err) {
+      setCities({
+        data: [],
+        isError: true,
+      });
+    }
+  };
+
   useEffect(() => {
     const localStorageValue = JSON.parse(localStorage.getItem("stayPageValue"));
 
@@ -149,6 +176,7 @@ const SearchBar = () => {
       date.setDate(currentDate + 1);
       setStayDate([new Date(), new Date(date)]);
     }
+    getAllCitiesAPI();
   }, []);
   return (
     <section className="search-area">
@@ -163,6 +191,14 @@ const SearchBar = () => {
             placeholder="where are you going?"
             ref={placeNameRef}
             onChange={handleChangePlaceName}
+            onFocus={() => {
+              // console.log("focus fire");
+              setIsCitySectionShow(true);
+            }}
+            onBlur={() => {
+              // console.log("focus out");
+              // setIsCitySectionShow(false);
+            }}
           />
           {placeName && (
             <span
@@ -173,6 +209,14 @@ const SearchBar = () => {
               <FontAwesomeIcon icon={faXmark} />
             </span>
           )}
+          {/* {isCitySectionShow && (
+            <SearchCitiesBox
+              cities={cities}
+              placeName={placeName}
+              setPlaceName={setPlaceName}
+              setIsCitySectionShow={setIsCitySectionShow}
+            />
+          )} */}
         </div>
         <div
           className="calender-search-area"

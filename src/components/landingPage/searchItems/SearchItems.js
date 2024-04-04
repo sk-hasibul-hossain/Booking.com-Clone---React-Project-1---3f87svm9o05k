@@ -6,25 +6,25 @@ import TrandingDestinationCard from "../trandingDestinationCard/TrandingDestinat
 const SearchItems = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const test = async () => {
-    try {
-      const searchParams = encodeURIComponent(
-        JSON.stringify({ type: "flights" })
-      );
-      const config = {
-        headers: {
-          projectID: "3f87svm9o05k",
-        },
-      };
-      const response = await axios(
-        `https://academics.newtonschool.co/api/v1/bookingportals/offers?filter=${searchParams}`,
-        config
-      );
-      console.log(response);
-    } catch (err) {
-      log("err", err);
-    }
-  };
+  // const test = async () => {
+  //   try {
+  //     const searchParams = encodeURIComponent(
+  //       JSON.stringify({ type: "flights" })
+  //     );
+  //     const config = {
+  //       headers: {
+  //         projectID: "3f87svm9o05k",
+  //       },
+  //     };
+  //     const response = await axios(
+  //       `https://academics.newtonschool.co/api/v1/bookingportals/offers?filter=${searchParams}`,
+  //       config
+  //     );
+  //     console.log(response);
+  //   } catch (err) {
+  //     log("err", err);
+  //   }
+  // };
   useEffect(() => {
     /*const apiUrl =
       "https://academics.newtonschool.co/api/v1/bookingportals/hotel";
