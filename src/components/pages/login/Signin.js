@@ -30,7 +30,7 @@ const Signin = () => {
       );
       const data = response.data;
       const token = data.token;
-      console.log(data.data.user.name);
+      // console.log(data.data.user.name);
       if (token) {
         sessionStorage.setItem("userToken", token);
         sessionStorage.setItem("userName", JSON.stringify(data.data.user.name));
